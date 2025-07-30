@@ -1,0 +1,33 @@
+#### Pre-requisites: 
+  - an EC2 Instance with
+    t2.medium (2 CPU & 2GB RAM)
+    10GB Storage
+
+------- Docker and Minikube install process-----
+1.Install Docker First
+  sudo dnf install docker -y  
+
+2.to start the docker service
+  sudo systemctl start docker.service
+
+3.to enable the docker service
+  sudo systemctl enable docker.service
+
+4.To Check the status of docker service
+  sudo systemctl status docker.service
+
+5.to add the user ec2-user to the docker group
+  sudo usermod -a -G docker ec2-user
+
+6.to run new group make changes immediatly 
+  newgrp docker
+
+-----------------------Minikube -----------------------
+ sudo curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 
+ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+          (or)
+ sudo mv minikube-linux-amd64 /usr/local/bin/minikube
+ sudo chmod +x /usr/local/bin/minikube 
+ minikube start --- to start minikube
+ minikube status --- to check minikube status
+
