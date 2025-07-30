@@ -31,3 +31,15 @@
  minikube start --- to start minikube
  minikube status --- to check minikube status
 
+------------- Setup kubectl ---------------------------------
+ a. Download kubectl version  from (https://kubernetes.io/docs/tasks/tools/install-kubectl-linux)
+ b. Grant execution permissions to kubectl executable 
+ c. Move kubectl onto /usr/local/bin
+ d. Test that your kubectl installation was successful
+ 
+  ##Kubectl.sh
+  curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.33.0/2025-05-01/bin/linux/amd64/kubectl
+  chmod +x ./kubectl
+  mv ./kubectl /usr/local/bin 
+  kubectl version --client
+
