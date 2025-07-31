@@ -1,0 +1,39 @@
+=====================Pod.yaml=========================
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+
+
+----------------------# PODS:-----------------------------
+
+Pods are the smallest deployable units of computing.
+A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers. 
+
+apiVersion:  For communicating with master node
+Kind:  it is a type of resource
+Metadata:  data about pod 
+Spec: it is a specifications of a container 
+Name : Name of the Container
+Image : Conatiner image
+Ports : To Expose the Application
+
+# COMMANDS: 
+
+ kubectl apply -f <pod_name.yaml>
+ To get all the pods: kubetctl get pods (or) kubectl get pod (or) kubectl get po
+ To delete a pod: kubectl delete pod pod_name
+ To get IP of a pod: kubectl get po pod_name -o wide
+ To get IP of all pods: kubectl get po -o wide
+ To get all details of a pod: kubectl describe pod podname
+ To get all details of all pods: kubectl describe po
+ To get the logging info of our pod: kubectl logs pod_name
+
+
+
