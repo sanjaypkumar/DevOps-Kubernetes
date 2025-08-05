@@ -1,1 +1,26 @@
+==============================Deployment============================
+
+--------------------------Deployment.yaml--------------------------
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd-deployment
+  labels:
+    app: httpd
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: http
+  template:
+    metadata:
+      labels:
+        app: http
+    spec:
+      containers:
+        - name: httpd-container
+          image: httpd
+
+
 
