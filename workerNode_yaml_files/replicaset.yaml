@@ -23,3 +23,6 @@ spec:
 
 
 ==========================Commands==========================
+To run Replicaset yaml file: kubectl apply -f rs.yaml
+To list : kubectl get rs (or) kubectl get replicaset
+
