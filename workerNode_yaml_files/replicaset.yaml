@@ -1,1 +1,25 @@
+==============REPLICASET===============
 
+-----------Replicaset.yaml-----------
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-pod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      name: mypod_name
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: httpd-container
+        image: httpd
+
+
+==========================Commands==========================
