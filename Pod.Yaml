@@ -36,6 +36,8 @@ Ports : To Expose the Application
  To get all details of a pod: kubectl describe pods podname
  To get all details of all pods: kubectl describe pods
  To get the logging info of our pod: kubectl logs pod_name
+ To enter into the pod container: kubectl exec -it <pod_name> -c <container_name> -- bash
+
 
 
 
