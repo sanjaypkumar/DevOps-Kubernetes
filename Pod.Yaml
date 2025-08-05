@@ -29,10 +29,12 @@ Ports : To Expose the Application
  kubectl apply -f <pod_name.yaml>
  To get all the pods: kubetctl get pods (or) kubectl get pod (or) kubectl get po
  To delete a pod: kubectl delete pod pod_name
- To get IP of a pod: kubectl get po pod_name -o wide
- To get IP of all pods: kubectl get po -o wide
- To get all details of a pod: kubectl describe pod podname
- To get all details of all pods: kubectl describe po
+ To get IP of a pod: kubectl get pods pod_name -o wide
+ To get pod details in json format: kubectl get pods -o json
+ To get pod details in yaml format: kubectl get pods -o yaml
+ To get IP of all pods: kubectl get pods -o wide
+ To get all details of a pod: kubectl describe pods podname
+ To get all details of all pods: kubectl describe pods
  To get the logging info of our pod: kubectl logs pod_name
 
 
