@@ -40,7 +40,9 @@ spec:
    kubectl scale --replicas=10 replicaset <name of the replica set>
 
    To Get all Resources: kubectl get all 
+  To show labels of RS: kubectl get rs --show-labels
 
    
+
 
 
