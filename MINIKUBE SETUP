@@ -1,7 +1,7 @@
 #### Pre-requisites: 
   - an EC2 Instance with
     t2.medium (2 CPU & 2GB RAM)
-    10GB Storage
+    20GB Storage
 
 ------- Docker and Minikube install process-----
 1.Install Docker First
