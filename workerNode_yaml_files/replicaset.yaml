@@ -23,6 +23,7 @@ spec:
 
 
 ==========================Commands==========================
+
  To run Replicaset yaml file: kubectl apply -f rs.yaml
  To list : kubectl get rs (or) kubectl get replicaset
  To delete a replicaset: kubectl delete rs rs_name
@@ -34,5 +35,12 @@ spec:
  To get all details of a rs: kubectl describe rs rsname
  To get all details of all rs: kubectl describe rs
  To get the logging info of our rs: kubectl logs rs_name
+ To increase the replicas with commands: kubectl scale --replicas=4 -f rs.yaml 
+          (or)
+   kubectl scale --replicas=10 replicaset <name of the replica set>
+
+   To Get all Resources: kubectl get all 
+
+   
 
 
