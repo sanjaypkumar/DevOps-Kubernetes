@@ -23,6 +23,16 @@ spec:
 
 
 ==========================Commands==========================
-To run Replicaset yaml file: kubectl apply -f rs.yaml
-To list : kubectl get rs (or) kubectl get replicaset
+ To run Replicaset yaml file: kubectl apply -f rs.yaml
+ To list : kubectl get rs (or) kubectl get replicaset
+ To delete a replicaset: kubectl delete rs rs_name
+ To delete all replicaset at a time: kubectl delete rs --all
+ To get IP of a rs: kubectl get rs rs_name -o wide
+ To get rs details in json format: kubectl get rs -o json
+ To get rs details in yaml format: kubectl get rs -o yaml
+ To get IP of all rs: kubectl get rs -o wide
+ To get all details of a rs: kubectl describe rs rsname
+ To get all details of all rs: kubectl describe rs
+ To get the logging info of our rs: kubectl logs rs_name
+
 
