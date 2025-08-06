@@ -1,1 +1,45 @@
 
+======================ClusterIP.yaml=============================
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-cip-svc
+  labels:
+    app: mylb
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: mydp
+
+
+=====================Deployment.Yaml=======================
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment2
+  labels:
+    app: mydp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myrs
+  template:
+    metadata:
+      labels:
+        app: myrs
+    spec:
+      containers:
+      - name: container1
+        image: httpd
+        ports:
+        - containerPort: 80
+
