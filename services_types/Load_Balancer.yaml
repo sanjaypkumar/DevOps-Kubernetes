@@ -1,0 +1,41 @@
+==========Load_Balancer.Yaml============
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-lb-svc
+  labels:
+    app: mylb
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: mydp
+
+----------------------Deployment.yaml----------------------
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+  labels:
+    app: mydp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myrs
+  template:
+    metadata:
+      labels:
+        app: myrs
+    spec:
+      containers:
+      - name: container1
+        image: nginx
+        ports:
+        - containerPort: 80
+
