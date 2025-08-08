@@ -1,3 +1,0 @@
-ingress and load balancer both are same
-
-ingress is used for to access the mutliple pods at a time instead for creating multiple load balancer
