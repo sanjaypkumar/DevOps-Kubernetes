@@ -1,0 +1,25 @@
+requiredDuringSchedulingIgnoredDuringExecution:
+it will schedule if matches the pod and node label only otherwise it will not schedule.
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-test
+  labels:
+      app: webapp
+      type: front-end
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: size
+            operator: In
+            values:
+            - medium
+            - small
+
