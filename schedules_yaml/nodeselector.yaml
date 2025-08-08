@@ -22,4 +22,11 @@ spec:
       kubectl label nodes <node_name> size-
           
 
-Node Selector: we use node selector to select a particluar node. But in real time if nodes are more then we can perform more labels command for each node.
+Node Selector: NodeSelector is the simplest recommended form of node selection constraint. 
+You can add the nodeSelector field to your Pod specification and specify the node labels you want the target node to have
+Kubernetes only schedules the Pod onto nodes that have each of the labels you specify.
+if my pod label is not matching it will not schedule on any node always trying to schedule on labeled node only otherwise it will not scheduled 
+
+we use node selector to select a particluar node. But in real time if nodes are more then we can perform more labels command for each node.
+
+
