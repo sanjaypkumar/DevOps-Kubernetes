@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: test-nginx
+        image: nginx
+        ports:
+        - containerPort: 8080
+
+Daemon Set: A Daemonset is another controller that manages pods like Deployments, ReplicaSets, and StatefulSets.
+Daemonset should deploy each pod in each node for high availability.
+
+ex : if we have three nodes same pod is going to schedule on three nodes 

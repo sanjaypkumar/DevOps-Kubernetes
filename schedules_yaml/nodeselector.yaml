@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+      app: webapp
+      
+spec:
+  containers:
+  - name: container1
+    image: httpd
+  nodeSelector:
+    size: small
+
+    we want to label the node with same as define nodeselector in yaml file
+    To label the node cmd:  kubectl label nodes <node_name> <label_key> = <label_value>
+                 (or)
+          kubectl label nodes <node_name> size=small
+                 
+    To unlabel the node cmd: kubectl label nodes <node_name>  <label_key>-
+                  (or)
+      kubectl label nodes <node_name> size-
+          
+
+Node Selector: NodeSelector is the simplest recommended form of node selection constraint. 
+You can add the nodeSelector field to your Pod specification and specify the node labels you want the target node to have
+Kubernetes only schedules the Pod onto nodes that have each of the labels you specify.
+if my pod label is not matching it will not schedule on any node always trying to schedule on labeled node only otherwise it will not scheduled 
+
+we use node selector to select a particluar node. But in real time if nodes are more then we can perform more labels command for each node.
+
+
